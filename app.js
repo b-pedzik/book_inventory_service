@@ -15,7 +15,7 @@ module.exports = (repo) => {
   app.use(errorHandler.handleServerError);
 
   app.listen(process.env.PORT || 3000, () => {
-    console.log('Example app listening on port:' + process.env.port || 3000);
+    console.log('Example app listening on port:' + process.env.PORT || 3000);
   });
 
   return app;
