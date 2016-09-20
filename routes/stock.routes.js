@@ -1,10 +1,8 @@
 const express = require('express');
-let StockActions;
-
 const router = express.Router();
 
 module.exports = (repo) => {
-  StockActions = require('./lib/StockActions')(repo);
+  const StockActions = require('../lib/StockActions')(repo);
 
   router.get('/', (req, res, next) => {
     console.log('Incomming request: ' + new Date());

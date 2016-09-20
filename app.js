@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const router = require('./router');
+const stockRoutes = require('./routes/stock.routes');
 const errorHandler = require('./errorHandler');
 
 module.exports = (repo) => {
@@ -9,7 +9,7 @@ module.exports = (repo) => {
 
   app.use(bodyParser.json());
 
-  app.use(router(repo));
+  app.use(stockRoutes(repo));
 
   app.use(errorHandler.handleClientError);
   app.use(errorHandler.handleServerError);

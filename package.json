@@ -20,6 +20,7 @@
     "babel-eslint": "6.1.2",
     "eslint": "3.5.0",
     "eslint-plugin-react": "6.2.2",
+    "heroin-js": "1.12.2",
     "mocha": "3.0.2",
     "supertest": "2.0.0"
   },
