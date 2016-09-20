@@ -8,7 +8,7 @@ module.exports = (repo) => {
     console.log('Incomming request: ' + new Date());
     next();
   }, (req, res) => {
-    res.send('Hello world!');
+    res.send('Hello world modified!');
   });
 
   router.post('/stock', StockActions.addStock);
