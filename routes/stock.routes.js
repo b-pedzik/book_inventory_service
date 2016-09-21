@@ -1,7 +1,7 @@
 const express = require('express');
-const router = express.Router();
 
-module.exports = (repo) => {
+module.exports = ({ repo, auth }) => {
+  const router = express.Router();
   const StockActions = require('../lib/StockActions')(repo);
 
   router.get('/', (req, res, next) => {
@@ -11,9 +11,9 @@ module.exports = (repo) => {
     res.send('Hello world pipeline!');
   });
 
-  router.post('/stock', StockActions.addStock);
-  router.get('/stock', StockActions.getAll);
-  router.get('/stock/:isbn', StockActions.getStock);
+  router.post('/stock', auth, StockActions.addStock);
+  router.get('/stock', auth, StockActions.getAll);
+  router.get('/stock/:isbn', auth, StockActions.getStock);
 
   return router;
 };
